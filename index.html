@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device width, initial-scale=1.0">
+        <link rel="stylesheet" href="estilos.css">
+        <title>Camisetas Meloja</title>
+    </head>
+<body>
+    <h1>CAMISETAS MELOJA</h1>
+    <ul id="menu">
+        <li id="camisetas"><a href="#">Camisetas</a></li>
+        <li id="retro"><a href="#">Retro</a></li>
+        <li id="nba"><a href="#">NBA</a></li>
+        <li id="entrenamiento"><a href="#">Entrenamiento y chándal</a></li>
+    </ul>
+
+    <script>
+        var links = {
+            'camisetas': ['https://hongpintiyu.x.yupoo.com/?utm_source=qrcode', 'https://baocheng3f888.x.yupoo.com/'],
+            'retro': ['https://huiliyuan.x.yupoo.com/', 'https://classic-football-fhirts052.x.yupoo.com/'],
+            'nba': ['http://guoshuzhen7788.x.yupoo.com', 'https://xingkong-sports.x.yupoo.com/albums?tab=gallery'],
+            'entrenamiento': ['https://dongshanstore.x.yupoo.com/albums', 'https://aosendi.x.yupoo.com/categories', 'https://aosendi.x.yupoo.com/albums', 'http://x.yupoo.com/photos/dongshanstore/albums', 'https://huang456852.x.yupoo.com/albums']
+        };
+
+        Object.keys(links).forEach(function (itemId) {
+            document.getElementById(itemId).addEventListener('click', function (event) {
+                event.preventDefault();
+                var numberedLinks = links[itemId].map(function (link, index) {
+                    return (index + 1) + '. ' + link;
+                });
+                var selectedLinkNumber = prompt("Elige un enlace:\n" + numberedLinks.join("\n"));
+                if (selectedLinkNumber && links[itemId][selectedLinkNumber - 1]) {
+                    window.open(links[itemId][selectedLinkNumber - 1]);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
